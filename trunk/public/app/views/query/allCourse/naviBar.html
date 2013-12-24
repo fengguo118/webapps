@@ -1,0 +1,59 @@
+<div>
+  <div>
+
+    <div>
+      <div style="float: left;margin-right: 10px">
+        <div class="btn-group">
+          <select ng-model="allCourseConditions.course" ng-options="course.name for course in options.courses">
+            <option value="">-- 选择课程 --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="float: left;margin-right: 10px">
+        学号：
+        <div class="btn-group">
+          <input type="text" ng-model="allCourseConditions.studentID">
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="float: left;margin-right: 10px">
+        日期：
+        <div class="btn-group">
+          <input type="date" ng-model="allCourseConditions.date">
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="float: left;margin-right: 10px">
+        <div class="btn-group">
+          <select ng-model="allCourseConditions.class_o" ng-options="class_o.name for class_o in options.classes">
+            <option value="">-- 选择班级 --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!--<div ng-repeat="query in queryOptions">-->
+      <!--<div style="float: left;margin-right: 10px">-->
+        <!--<div class="btn-group">-->
+          <!--<select ng-model={{query.ngModelStr}} ng-options="query.ngOptionsStr">-->
+          <!--&lt;!&ndash;<select ng-model="ll" options={{query.ngOptionsStr}}>&ndash;&gt;-->
+            <!--<option value="">-- 选择{{query.label}} --</option>-->
+          <!--</select>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+  </div>
+
+  <div class="span2" style="float: right;margin-left: 10px;">
+    <img src="img/custom/query_btn_n.png" style="margin-bottom: 5px;margin-right: 5px;cursor: pointer;float: right" ng-click="queryItems(allCourseConditions)">
+    <br>
+  </div>
+</div>

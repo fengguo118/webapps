@@ -1,0 +1,79 @@
+
+<div class="control-group">
+  <label class="control-label">原日期</label>
+  <div class="controls">
+    <div class="dropdown">
+      <a class="dropdown-toggle" id="dropdown1" role="button" data-toggle="dropdown" data-target="#" href="#">
+        <div class="input-append"><input readonly="readonly" type="text" class="input-large" ng-model="entity.originDateShow" required><span class="add-on"><i class="icon-calendar"></i></span>
+        </div>
+      </a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <datetimepicker ng-model="entity.originDate" data-datetimepicker-config="{ dropdownSelector: '#dropdown1',minView:'day' }" />
+      </ul>
+      <i class="icon-asterisk" />
+    </div>
+  </div>
+</div>
+
+
+<div class="control-group">
+  <label class="control-label">课程名称</label>
+  <div class="controls">
+    <div class="btn-group" ng-init="entity.course = options.courses[0]">
+      <select ng-model="entity.course" ng-options="course.name for course in options.courses " required>
+        <option value="">-- 选择课程 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>
+
+
+<div class="control-group">
+  <label class="control-label">新日期</label>
+  <div class="controls">
+    <div class="dropdown">
+      <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
+        <div class="input-append"><input readonly="readonly" type="text" class="input-large" ng-model="entity.newDateShow" required><span class="add-on"><i class="icon-calendar"></i></span>
+        </div>
+      </a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <datetimepicker ng-model="entity.newDate" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' ,minView:'day'}" />
+      </ul>
+      <i class="icon-asterisk" />
+      &nbsp;<button ng-click="queryFreeTime()">查询空闲时间</button>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="control-group">
+  <label class="control-label">开始</label>
+  <div class="controls">
+    <div class="btn-group">
+      <select ng-model="entity.start" ng-options="time.time for time in options.dailySchedules " required>
+        <option value="">-- 选择开始时间 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">结束</label>
+  <div class="controls">
+    <div class="btn-group">
+      <select ng-model="entity.end" ng-options="time.time for time in options.dailySchedules " required>
+        <option value="">-- 选择结束时间 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>
+
+<div class="form-actions" style="background: #ffffff">
+  <button ng-disabled="editForm.$error.required" ng-click="applyTransferCourse(entity)" class="btn btn-primary btn-large">申请调课</button>
+  <!--<button ng-disabled="editForm.$error.required" ng-click="update(entity)" class="btn btn-primary btn-large" ng-if="!!entity.id">保存</button>-->
+  <button ng-click="initSelf()" class="btn btn-large">取消</button>
+</div>

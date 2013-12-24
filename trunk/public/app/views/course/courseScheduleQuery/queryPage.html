@@ -1,0 +1,163 @@
+<div class="box-header" style="background: #ffffff;height: 45px;vertical-align: middle">
+  <h2 style="color: #008FD4;font-weight: bold;font-size: 20px"><span class="break"></span>{{currentView.name}}</h2>
+</div>
+<div style="margin-left: 20px;margin-right: 20px;background: #ffffff">
+  <hr style="margin-top: 0px;margin-bottom: 0px;color: #E5E5E5">
+</div>
+<div class="box-content" style="padding-left: 22px;padding-right: 22px">
+
+  <div class="row-fluid" >
+    <div ng-include="topNaviBar" />
+  </div>
+
+  <table class="table table-striped table-bordered bootstrap-datatable datatable" ng-init="headers=['时间段','星期一','星期二','星期三','星期四','星期五','星期六']">
+    <thead>
+    <tr style="background: #008FD4">
+      <th ng-repeat="header in headers" style="color: #ffffff;text-align: center;font-weight: bold;font-size: 18px">{{header}}</th>
+
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._2.timeName}}&nbsp;</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._2.Monday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._2.Tuesday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._2.Wednesday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._2.Thursday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._2.Friday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._2.Saturday}}</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._4.timeName}}&nbsp;</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._4.Monday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._4.Tuesday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._4.Wednesday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._4.Thursday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._4.Friday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._4.Saturday}}</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._6.timeName}}&nbsp;</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._6.Monday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._6.Tuesday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._6.Wednesday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._6.Thursday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._6.Friday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._6.Saturday}}</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._8.timeName}}&nbsp;</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._8.Monday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._8.Tuesday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._8.Wednesday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._8.Thursday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._8.Friday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._8.Saturday}}</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._10.timeName}}&nbsp;</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._10.Monday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._10.Tuesday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._10.Wednesday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._10.Thursday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._10.Friday}}</span>
+        </td>
+        <td class="center" style="text-align: center">
+          <span>{{schdedule._10.Saturday}}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="row-fluid" ng-if="!!changes">
+    <h1>调课：</h1>
+    <table class="table table-striped table-bordered bootstrap-datatable datatable" ng-init="tipsHeaders=['课程名称','原日期','新日期']">
+      <thead>
+        <tr style="background: #008FD4">
+          <th ng-repeat="tips in tipsHeaders" style="color: #ffffff;text-align: center;font-weight: bold;font-size: 18px">{{tips}}</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="change in changes">
+          <td class="center" style="text-align: center">
+            <span>{{change.courseName}}&nbsp;</span>
+          </td>
+          <td class="center" style="text-align: center">
+            <span>{{change.srcTime}}&nbsp;</span>
+          </td>
+          <td class="center" style="text-align: center">
+            <span>{{change.destTime}}&nbsp;</span>
+          </td>
+        <tr>
+      </tbody>
+    </table>
+  </div>
+</div>

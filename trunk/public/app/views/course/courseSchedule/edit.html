@@ -1,0 +1,119 @@
+
+<div class="control-group">
+  <label class="control-label">单双周</label>
+  <div class="controls">
+    <!--<form name="evenUsedForm"  ng-init="entity.evenUsed=0">-->
+    <form name="evenUsedForm" ng-if="isEvenUsed === 0">
+
+      <div class="btn-group" ng-repeat=" evenUsedCollection in  options.evenUsedCollectiones" style="font-size: 16px">
+        <input type="radio" ng-model="entity.evenUsed" value={{evenUsedCollection.code}} required>
+        &nbsp;&nbsp;{{evenUsedCollection.name}}
+      </div>
+      &nbsp;&nbsp;<i class="icon-asterisk" />
+    </form>
+
+    <form name="evenUsedForm" ng-if="isEvenUsed === 1" ng-init="entity.evenUsed = 0">
+
+      <div class="btn-group" ng-repeat=" evenUsedCollection in  options.evenUsedCollectiones" style="font-size: 16px">
+        <input type="radio" ng-model="entity.evenUsed" value={{evenUsedCollection.code}} required ng-disabled="true">
+        &nbsp;&nbsp;{{evenUsedCollection.name}}
+      </div>
+      &nbsp;&nbsp;<i class="icon-asterisk" />
+    </form>
+
+  </div>
+</div>
+
+
+<div class="control-group">
+  <label class="control-label">周几</label>
+  <div class="controls">
+    <!--<div class="btn-group" ng-init="entity.dayOfWeek = 1">-->
+    <div class="btn-group">
+      <select ng-model="entity.dayOfWeek" ng-options="week.name for week in options.weekes" style="width: 190px" >
+        <option value="">-- 选择星期 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>
+
+
+<div class="control-group">
+	<label class="control-label">课程名称</label>
+	<div class="controls">
+		<!--<div class="btn-group" ng-init="entity.course = options.courses[0]">-->
+		<div class="btn-group">
+      <select ng-model="entity.course" ng-options="course.name for course in options.courses " required>
+        <option value="">-- 选择课程 --</option>
+      </select>
+		</div>
+    <i class="icon-asterisk" />
+	</div>
+</div>
+
+
+
+
+<div class="control-group">
+  <label class="control-label">开始时间</label>
+  <div class="controls">
+    <!--<div class="btn-group" ng-init="entity.start = options.schedules[0]">-->
+    <div class="btn-group">
+      <select ng-model="entity.start" ng-options="schedule.name for schedule in options.schedules " required>
+        <option value="">-- 选择开始时间 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>
+
+
+
+<div class="control-group">
+  <label class="control-label">结束时间</label>
+  <div class="controls">
+    <!--<div class="btn-group" ng-init="entity.end = options.schedules[0]">-->
+    <div class="btn-group">
+      <select ng-model="entity.end" ng-options="schedule.name for schedule in options.schedules  " required>
+        <option value="">-- 选择结束时间 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>
+
+
+
+<div class="control-group">
+  <label class="control-label">教室</label>
+  <div class="controls">
+    <!--<div class="btn-group" ng-init="entity.classroom = options.classroomes[0]">-->
+    <div class="btn-group">
+      <select ng-model="entity.classroom" ng-options="classroom.serial_number for classroom in options.classroomes " required>
+        <option value="">-- 选择教室 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">状态</label>
+  <div class="controls">
+    <!--<div class="btn-group" ng-init="entity.status = 0">-->
+    <div class="btn-group" >
+      <!--<select ng-model="entity.status" required>-->
+        <!--<option value="">-- 选择状态 --</option>-->
+        <!--<option value="0">正常</option>-->
+        <!--<option value="1">暂停</option>-->
+        <!--<option value="2">撤销</option>-->
+        <!--<option value="3">临时调整</option>-->
+      <!--</select>-->
+      <select ng-model="entity.status" ng-options="status.name for status in options.statuses " required>
+        <option value="">-- 选择状态 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>

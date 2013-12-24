@@ -1,0 +1,11 @@
+<div class="control-group">
+  <label class="control-label">校区</label>
+  <div class="controls">
+    <div class="btn-group">
+      <select ng-model="entity.campuse" ng-options="campuse.name for campuse in options.campuses " required>
+        <option value="">-- 选择校区 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>

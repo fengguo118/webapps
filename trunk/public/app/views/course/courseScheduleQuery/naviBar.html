@@ -1,0 +1,72 @@
+<div>
+  <div>
+    <div>
+      <div style="float: left;margin-right: 10px">
+        <div class="btn-group">
+          <select ng-model="condition.college" ng-options="college.name for college in colleges" style="width: 190px">
+            <option value="">-- 选择学院 --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="float: left;margin-right: 10px">
+        <div class="btn-group">
+          <select ng-model="condition.subject" ng-options="subject.name for subject in subjectes" style="width: 190px">
+            <option value="">-- 选择专业 --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="float: left;margin-right: 10px">
+        <div class="btn-group">
+          <select ng-model="condition.grade" style="width: 190px" ng-options="grade for grade in grades">
+            <option value="">-- 选择年级 --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="float: left;margin-right: 10px">
+        <div class="btn-group">
+          <select ng-model="condition.class_o" ng-options="class_o.name for class_o in classes" style="width: 190px">
+            <option value="">-- 选择班级 --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="float: left;margin-right: 10px">
+        <div class="btn-group">
+          <select ng-model="condition.student" ng-options="student.name for student in students" style="width: 190px">
+            <option value="">-- 选择学生 --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div ng-if="isEvenUsed === 0">
+      <div style="float: left;margin-right: 10px">
+        <div class="btn-group">
+          <!--<select ng-model="condition.student" ng-options="student.name for student in students" style="width: 190px">-->
+            <!--<option value="">-- 选择学生 --</option>-->
+          <!--</select>-->
+          <button ng-show="evenUsed === 0" ng-click="changTo1()">单周</button>
+          <button ng-show="evenUsed === 1" ng-click="changTo0()">双周</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="span2" style="float: right;margin-left: 10px;">
+    <img src="img/custom/query_btn_n.png" style="margin-bottom: 5px;margin-right: 5px;cursor: pointer;float: right" ng-click="querySchedule(condition)" title="查询">
+    <br>
+  </div>
+
+</div>

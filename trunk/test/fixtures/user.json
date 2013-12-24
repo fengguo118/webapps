@@ -1,0 +1,28 @@
+{
+	"tester": {
+		"username":"admin",
+		"password":"123456",
+		"name":"管理员",
+		"displayName":"平台管理员",
+		"email":"tester@fankahui.com",
+		"phone":"18912345678",
+		"idcard":"220721197806179752",
+		"birthday":"1978-06-17",
+		"male":true,
+		"roles":["admin", "staff"],
+		"createdAt":"2013-06-13 20:30:12"
+	},
+	"member": {
+		"username":"member",
+		"password":"123456",
+		"name":"袁鑫鹏",
+		"displayName":"袁鑫鹏会员",
+		"email":"member@fankahui.com",
+		"phone":"13912345678",
+		"idcard":"230207198604266577",
+		"birthday":"1986-04-26",
+		"male":true,
+		"roles":["member"],
+		"createdAt":"2013-06-13 20:30:12"
+	}
+}

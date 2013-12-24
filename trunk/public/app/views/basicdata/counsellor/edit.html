@@ -1,0 +1,22 @@
+<div class="control-group">
+  <label class="control-label">工号</label>
+
+  <div class="controls">
+    <input class="input-xlarge" type="text" ng-model="entity.emp_id" required ui-Blur="checkDuplication()">
+    <i class="icon-asterisk"/>
+
+    <h3 style="color: red">&nbsp;{{Duplication}}</h3>
+  </div>
+</div>
+
+<div class="control-group">
+	<label class="control-label">学院</label>
+	<div class="controls">
+		<div class="btn-group">
+      <select id="sltSelector" ng-model="entity.department" ng-options="department.name for department in options.departments " required>
+        <option value="">-- 选择学院 --</option>
+      </select>
+		</div>
+    <i class="icon-asterisk" />
+	</div>
+</div>

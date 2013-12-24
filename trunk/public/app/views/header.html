@@ -1,0 +1,84 @@
+<div ng-controller="HeaderController" ng-init="init()">
+  <div class="navbar">
+    <div class="navbar-inner" style="height: 44px;padding:0px 0px 0px 0!important">
+      <div class="container-fluid" >
+        <img src="img/custom/icon_logo.png" style="padding: 0px;height: 44px;width: 44px;position: absolute;left: 0px">
+        <div class="row-fluid" style="float: left">
+          <a class="brand span2" style="background: #ffffff;border-bottom: 0px;left: 44px;width: 186px;height: 44px">
+            <span style="color: #008fd4;font-family: 'Lato', sans-serif;font-weight: bold">学院考勤系统</span>
+          </a>
+        </div>
+        <!--<div style="float: right">-->
+          <!--<a class="span2" style="float: right;right: 0;position: absolute;width: 228px;background: #008FD4;height: 44px"></a>-->
+        <!--</div>-->
+      </div>
+      <!-- start: Header Menu -->
+      <div class="nav-no-collapse header-nav">
+        <ul class="nav pull-right" >
+          <!-- start: User Dropdown -->
+          <li class="dropdown">
+            <a class="btn account dropdown-toggle" data-toggle="dropdown" href="#" style="height: 44px;padding:0px 38px 0px 0!important">
+              <div class="user" style="height: 44px;float: left;vertical-align: middle;margin: 0px">
+                <!-- <span class="hello">Welcome!</span> -->
+                <span class="name" style="margin-top:1px!important;padding:10px 5px 0px 0!important" title="当前用户">{{userName}}</span>
+              </div>
+              <h1 style="float: left;margin-top:2px!important;margin-bottom:0px!important">|</h1>
+              <div class="avatar" style="float: right;height: 44px;width: 38px">
+                <img src="img/custom/icon_user.png"  title="操作" alt="Avatar" style="margin: 8px 0px 0px 0!important">
+              </div>
+            </a>
+            <ul class="dropdown-menu" style="margin-right:38px!important;cursor:pointer">
+              <li class="dropdown-menu-title" style="color: #4B5D66"></li>
+              <!--<li><a href="#" data-toggle="modal"><i class="icon-user"></i> 个人资料 </a></li>-->
+              <!--<li><a bs-modal="'views/sign/setPerson.html'"><i class="icon-user"></i> 个人资料 </a></li>-->
+              <!--<li><a href="#!/setpwd"><i class="icon-cog"></i> 设置密码</a></li>-->
+              <!--<li><a ng-click="showSettingPasswordModal=true"><i class="icon-cog"></i> 设置密码</a></li>-->
+              <li><a bs-modal="'views/sign/setPassword.html'"><i class="icon-cog"></i> 设置密码</a></li>
+              <!--<li><a href="#"><i class="icon-envelope"></i> 消息 </a></li>-->
+              <li><a ng-click="signout()"><i class="icon-off"></i> 登出 </a></li>
+            </ul>
+          </li>
+          <!-- end: User Dropdown -->
+        </ul>
+      </div>
+      <!-- end: Header Menu -->
+    </div>
+  </div>
+
+
+  <!-- Start: Setting Password -->
+  <!--<div class="modal hide fade" modal="showSettingPasswordModal" ng-controller="SettingPasswordController">-->
+    <!--<div class="modal-header">-->
+      <!--<button type="button" class="close" data-dismiss="modal" ng-click="hideSettingPassword()">×</button>-->
+      <!--<h3 style="font-weight: bold;color: #008fd4">设置新密码</h3>-->
+    <!--</div>-->
+    <!--<div class="modal-body">-->
+      <!--<div class="control-group" style="margin-left: 35px!important;">-->
+        <!--<label class="control-label" for="new-password" style="margin-left: 5px!important;">-->
+          <!--<i class="icon-lock"></i>-->
+          <!--请输入新密码-->
+        <!--</label>-->
+        <!--<div class="controls">-->
+          <!--<input class="input-xlarge span5 focused" ng-model="newPassword" id="new-password" type="password" required>-->
+        <!--</div>-->
+        <!--<label class="control-label" for="new-password" style="margin-left: 5px!important;">-->
+          <!--<i class="icon-lock"></i>-->
+          <!--请重复输入一遍上面的密码-->
+        <!--</label>-->
+        <!--<div class="controls">-->
+          <!--<input class="input-xlarge span5" ng-model="passwordConfirmation" id="password-confirmation" type="password" required>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="alert alert-danger fade in" ng-show="showSettingMessage" style="display: none;">-->
+        <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
+        <!--<h4 class="alert-heading">警告！</h4>-->
+        <!--<p class="ng-binding">{{errorDetail}}</p>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="modal-footer">-->
+      <!--<a class="btn" data-dismiss="modal">关闭</a>-->
+      <!--<a class="btn btn-primary" ng-click="setPassword()">修改密码</a>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!-- End: Setting Password -->
+</div>

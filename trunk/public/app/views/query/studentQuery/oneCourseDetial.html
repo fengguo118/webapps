@@ -1,0 +1,86 @@
+<div class="box-header">
+  <h2>
+    学生单门课查询
+  </h2>
+  <div class="box-icon">
+    <a ng-click="cancel()" class="btn-close"><i class="icon-remove"></i></a>
+  </div>
+</div>
+<div class="box-content">
+  <br>
+  <div>
+    <div>
+      <div style="float: left;margin-right: 10px">
+        <div class="btn-group">
+          <!--<select ng-model="search.statusName" ng-options="status for status in statuses">-->
+          <select ng-model="search.statusName">
+            <option value="">-- 选择状态 --</option>
+            <option value="出席">出席</option>
+            <option value="旷课">旷课</option>
+            <option value="迟到">迟到</option>
+            <option value="早退">早退</option>
+            <option value="病假">病假</option>
+            <option value="事假">事假</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="float: left;margin-right: 10px">
+        日期：
+        <!--<div class="btn-group">-->
+          <!--<input type="date" ng-model="search.date">-->
+        <!--</div>-->
+        <div class="btn-group">
+          <div class="controls" style="font-size: 14px">
+            <div class="dropdown">
+              <a class="dropdown-toggle" id="dropdown1" role="button" data-toggle="dropdown" data-target="#" href="#">
+                <div class="input-append"><input type="text" class="input-large" ng-model="search.date" required><span class="add-on"><i class="icon-calendar"></i></span>
+                </div>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <datetimepicker ng-model="date.dateBing" data-datetimepicker-config="{ dropdownSelector: '#dropdown1',minView:'day' }" />
+              </ul>
+              <button style="margin-bottom: 10px;margin-left: 5px" ng-if="search.date" ng-click="clearDate()">清空</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--<div class="span2" style="float: right;margin-left: 10px;">-->
+      <!--<img src="img/custom/query_btn_n.png" style="margin-bottom: 5px;margin-right: 5px;cursor: pointer;float: right" ng-click="queryOneCourse(oneCourseCondition)">-->
+      <!--<br>-->
+    <!--</div>-->
+  </div>
+
+  <table class="table table-striped table-bordered bootstrap-datatable datatable" style="border-color: #ffffff">
+    <tr>
+      <td>
+        <table class="table table-striped table-bordered bootstrap-datatable datatable" style="width: 300px">
+          <thead>
+          <tr style="background: #008FD4">
+            <th style="color: #ffffff;text-align: center;font-weight: bold;font-size: 18px">日期</th>
+            <th style="color: #ffffff;text-align: center;font-weight: bold;font-size: 18px;">状态</th>
+            <!--<th style="background: #ffffff;"></th>-->
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="courseRateDetail in courseRateDetails | filter:search">
+            <td class="center"  style="text-align: center">
+              <span>{{courseRateDetail.date}}</span>
+            </td>
+            <td class="center"  style="text-align: center">
+              <span>{{courseRateDetail.statusName}}</span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <br><br><br><br><br><br><br><br><br><br>
+
+
+</div>
+

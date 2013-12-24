@@ -1,0 +1,47 @@
+
+
+<div class="control-group" ng-if="!entity._id">
+  <label class="control-label">开始时间</label>
+  <div class="controls">
+    <input class="input-xlarge" type="text" ng-model="entity.start" required >
+    <!--<input type="text" ng-model="entity.start" bs-timepicker>-->
+    <!--<button type="button" class="btn" data-toggle="timepicker"></button>-->
+    <i class="icon-asterisk" />
+    <span>（参照格式:15:30）</span>
+  </div>
+</div>
+
+<div class="control-group" ng-if="!entity._id">
+  <label class="control-label">结束时间</label>
+  <div class="controls">
+    <input class="input-xlarge" type="text" ng-model="entity.end" required >
+    <i class="icon-asterisk" />
+    <span>（参照格式:15:30）</span>
+  </div>
+</div>
+
+
+
+<!--<div class="control-group">
+	<label class="control-label">时令</label>
+	<div class="controls">
+		<div class="btn-group">
+      <select ng-model="entity.season" ng-options="season.name for season in options.seasones " required>
+        <option value="">-- 选择时令 --</option>
+      </select>
+		</div>
+    <i class="icon-asterisk" />
+	</div>
+</div>-->
+
+<div class="control-group">
+  <label class="control-label">校区</label>
+  <div class="controls">
+    <div class="btn-group">
+      <select ng-model="entity.campus" ng-options="campus.name for campus in options.campuses " required>
+        <option value="">-- 选择校区 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>

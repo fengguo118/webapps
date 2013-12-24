@@ -1,0 +1,149 @@
+
+
+<!--<div class="control-group" ng-if="!entity._id">-->
+  <!--<label class="control-label">开始时间</label>-->
+  <!--<div class="controls">-->
+    <!--<input class="input-xlarge" type="text" ng-model="entity.start" required >-->
+    <!--<i class="icon-asterisk" />-->
+    <!--<span>（参照格式:15:30）</span>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div class="control-group" ng-if="!entity._id">-->
+  <!--<label class="control-label">结束时间</label>-->
+  <!--<div class="controls">-->
+    <!--<input class="input-xlarge" type="text" ng-model="entity.end" required >-->
+    <!--<i class="icon-asterisk" />-->
+    <!--<span>（参照格式:15:30）</span>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+
+<div class="control-group">
+	<label class="control-label">课程类型</label>
+	<div class="controls">
+		<!--<div class="btn-group" ng-init="entity.type = options.types[0]">-->
+		<div class="btn-group">
+      <select ng-model="entity.type" ng-options="type.name for type in options.types " required>
+        <option value="">-- 选择课程类型 --</option>
+      </select>
+		</div>
+    <i class="icon-asterisk" />
+	</div>
+</div>
+
+
+
+<div class="control-group">
+  <label class="control-label">学院</label>
+  <div class="controls">
+    <div class="btn-group">
+      <select ng-model="entity.college" ng-options="college.name for college in options.colleges ">
+        <option value="">-- 选择学院 --</option>
+      </select>
+    </div>
+  </div>
+</div>
+<!--
+<div class="control-group">
+  <label class="control-label">专业</label>
+  <div class="controls">
+    <div class="btn-group">
+      <select ng-model="entity.campus" ng-options="campus.name for campus in options.campuses ">
+        <option value="">-- 选择专业 --</option>
+      </select>
+    </div>
+  </div>
+</div>
+-->
+<div class="control-group">
+  <label class="control-label">任课老师</label>
+  <div class="controls">
+    <div class="btn-group">
+      <select ng-model="entity.teacher" ng-options="teacher.name for teacher in options.teachers " required>
+        <option value="">-- 选择任课老师 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">上课考勤方式</label>
+  <div class="controls">
+      <!--<form name="takeAttendTypeForm"  ng-init="entity.takeAttendType = 0">-->
+      <form name="takeAttendTypeForm">
+        <div class="btn-group" ng-repeat=" type in  options.attendTypes" style="font-size: 16px">
+          <input type="radio" ng-model="entity.takeAttendType" value={{type.code}} required>
+          &nbsp;&nbsp;{{type.name}}
+        </div>
+        &nbsp;&nbsp;<i class="icon-asterisk" />
+      </form>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">课间考勤方式</label>
+  <div class="controls">
+      <!--<form name="intervalAttendTypeForm"  ng-init="entity.intervalAttendType=0">-->
+      <form name="intervalAttendTypeForm" >
+        <div class="btn-group" ng-repeat=" type in  options.attendTypes" style="font-size: 16px">
+          <input type="radio" ng-model="entity.intervalAttendType" value={{type.code}} required>
+          &nbsp;&nbsp;{{type.name}}
+        </div>
+        &nbsp;&nbsp;<i class="icon-asterisk" />
+      </form>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">下课考勤方式</label>
+  <div class="controls">
+      <!--<form name="dismissAttendTypeForm"  ng-init="entity.dismissAttendType=0">-->
+      <form name="dismissAttendTypeForm"  >
+        <div class="btn-group" ng-repeat=" type in  options.attendTypes" style="font-size: 16px">
+          <input type="radio" ng-model="entity.dismissAttendType" value={{type.code}} required>
+          &nbsp;&nbsp;{{type.name}}
+        </div>
+        &nbsp;&nbsp;<i class="icon-asterisk" />
+      </form>
+  </div>
+</div>
+
+<!--<div class="control-group">-->
+  <!--<label class="control-label">课间考勤方式</label>-->
+  <!--<div class="controls">-->
+    <!--<div class="btn-group">-->
+      <!--<select ng-model="entity.intervalAttendType" ng-options="intervalAttendType.name for intervalAttendType in options.attendTypes " required>-->
+        <!--<option value="">-- 选择课间考勤方式 --</option>-->
+      <!--</select>-->
+    <!--</div>-->
+    <!--<i class="icon-asterisk" />-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div class="control-group">-->
+  <!--<label class="control-label">下课考勤方式</label>-->
+  <!--<div class="controls">-->
+    <!--<div class="btn-group">-->
+      <!--<select ng-model="entity.dismissAttendType" ng-options="dismissAttendType.name for dismissAttendType in options.attendTypes " required>-->
+        <!--<option value="">-- 选择下课考勤方式 --</option>-->
+      <!--</select>-->
+    <!--</div>-->
+    <!--<i class="icon-asterisk" />-->
+  <!--</div>-->
+<!--</div>-->
+
+<div class="control-group">
+  <label class="control-label">状态</label>
+  <div class="controls">
+    <!--<div class="btn-group" ng-init="entity.status = options.statuses[0]">-->
+    <div class="btn-group">
+      <select ng-model="entity.status" ng-options="status.name for status in options.statuses " required>
+        <option value="">-- 选择状态 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>

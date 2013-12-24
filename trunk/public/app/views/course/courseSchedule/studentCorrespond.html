@@ -1,0 +1,18 @@
+<div class="box-header">
+  <h2><i ng-class="currentView.icon"></i><span class="break"></span>{{currentView.name}} - 课程学生对应</h2>
+  <div class="box-icon">
+    <a ng-click="showList()" class="btn-close"><i class="icon-remove"></i></a>
+  </div>
+</div>
+<div class="box-content">
+
+
+  <div ng-controller="StudentCorrespondCtrl">
+    <input type="file" ng-file-select="onFileSelect($files)" > {{uploadMSG}}
+    <!--<div class="alert alert-block alert-danger fade in" style="width: 100px" ng-if="show">-->
+      <!--&lt;!&ndash;<button type="button" class="close">×</button>&ndash;&gt;-->
+      <!--<p class="ng-binding">{{uploadMSG}}</p>-->
+    <!--</div>-->
+  </div>
+  <div class="clearfix"></div>
+</div>

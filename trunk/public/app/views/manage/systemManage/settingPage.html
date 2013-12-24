@@ -1,0 +1,287 @@
+<div class="box-header">
+  <h2>
+    <span>网站配置</span>
+  </h2>
+</div>
+<div class="box-content">
+  <form class="form-horizontal" ng-model="entity" name="editForm">
+    <fieldset>
+
+      <!--<div class="control-group" ng-if="false">-->
+        <!--<label class="control-label">上课考勤方式</label>-->
+        <!--<div class="controls">-->
+          <!--<form name="takeAttendTypeForm"  ng-init="entity.takeAttendType = '0'">-->
+            <!--<div class="btn-group" style="font-size: 16px">-->
+              <!--<input type="radio" ng-model="entity.takeAttendType" value='0' required>-->
+              <!--&nbsp;&nbsp;全部-->
+              <!--<input type="radio" ng-model="entity.takeAttendType" value='1' required>-->
+              <!--&nbsp;&nbsp;抽查-->
+            <!--</div>-->
+          <!--</form>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <div class="control-group">
+        <label class="control-label">上课考勤方式</label>
+        <div class="controls">
+          <!--<form name="takeAttendTypeForm"  ng-init="entity.takeAttendType = '0'">-->
+          <form name="takeAttendTypeForm" >
+            <div class="btn-group" style="font-size: 16px">
+              <input type="radio" ng-model="entity.takeAttendType" value='0'>
+              &nbsp;&nbsp;全部
+              <input type="radio" ng-model="entity.takeAttendType" value='1'>
+              &nbsp;&nbsp;抽查
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">课间考勤方式</label>
+        <div class="controls">
+          <!--<form name="intervalAttendTypeForm"  ng-init="entity.intervalAttendType = '0'">-->
+          <form name="intervalAttendTypeForm" >
+            <div class="btn-group" style="font-size: 16px">
+              <input type="radio" ng-model="entity.intervalAttendType" value='0'>
+              &nbsp;&nbsp;全部
+              <input type="radio" ng-model="entity.intervalAttendType" value='1'>
+              &nbsp;&nbsp;抽查
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">下课考勤方式</label>
+        <div class="controls">
+          <!--<form name="dismissAttendTypeForm"  ng-init="entity.dismissAttendType = '0'">-->
+          <form name="dismissAttendTypeForm"  >
+            <div class="btn-group" style="font-size: 16px">
+              <input type="radio" ng-model="entity.dismissAttendType" value='0'>
+              &nbsp;&nbsp;全部
+              <input type="radio" ng-model="entity.dismissAttendType" value='1'>
+              &nbsp;&nbsp;抽查
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="control-group">
+        <label class="control-label">上课考勤开始时间</label>
+        <div class="controls">
+            <div class="btn-group" style="font-size: 16px;width: 200px">
+              <!--<input class="input-xlarge focused" type="number" ng-model="entity.attendStartTime" value="12323">-->
+              <div ui-slider min="10" max="30" ng-model="entity.attendStartTime"></div>{{entity.attendStartTime}}
+            </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">上课考勤结束时间</label>
+        <div class="controls">
+          <div class="btn-group" style="font-size: 16px;width: 200px">
+            <!--<input class="input-xlarge focused" type="number" ng-model="entity.attendEndTime">-->
+            <div ui-slider min="0" max="30" ng-model="entity.attendEndTime"></div>{{entity.attendEndTime}}
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">课间考勤结束时间</label>
+        <div class="controls">
+          <div class="btn-group" style="font-size: 16px;width: 200px">
+            <!--<input class="input-xlarge focused" type="number" ng-model="entity.intervalEndTime">-->
+            <div ui-slider min="0" max="30" ng-model="entity.intervalEndTime"></div>{{entity.intervalEndTime}}
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">下课考勤结束时间</label>
+        <div class="controls">
+          <div class="btn-group" style="font-size: 16px;width: 200px">
+            <!--<input class="input-xlarge focused" type="number" ng-model="entity.dismissEndTime">-->
+            <div ui-slider min="10" max="30" ng-model="entity.dismissEndTime"></div>{{entity.dismissEndTime}}
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">学期开始</label>
+        <!--<div class="controls">-->
+          <!--<div class="btn-group" style="font-size: 16px">-->
+            <!--<input class="input-xlarge focused" type="text" ng-model="entity.termStart">-->
+          <!--</div>-->
+        <!--</div>-->
+        <div class="controls" style="font-size: 14px">
+          <div class="dropdown">
+            <a class="dropdown-toggle" id="dropdown1" role="button" data-toggle="dropdown" data-target="#" href="#">
+              <div class="input-append"><input readonly="readonly" type="text" class="input-large" ng-model="entity.termStart" required><span class="add-on"><i class="icon-calendar"></i></span>
+              </div>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <datetimepicker ng-model="entity.termStartBing" data-datetimepicker-config="{ dropdownSelector: '#dropdown1',minView:'day' }" />
+            </ul>
+            <button style="margin-bottom: 10px;margin-left: 5px" ng-if="search.date" ng-click="clearDate()">清空</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">学期结束</label>
+        <!--<div class="controls">-->
+          <!--<div class="btn-group" style="font-size: 16px">-->
+            <!--<input class="input-xlarge focused" type="text" ng-model="entity.termEnd">-->
+          <!--</div>-->
+        <!--</div>-->
+        <div class="controls" style="font-size: 14px">
+          <div class="dropdown">
+            <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
+              <div class="input-append"><input readonly="readonly" type="text" class="input-large" ng-model="entity.termEnd" required><span class="add-on"><i class="icon-calendar"></i></span>
+              </div>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <datetimepicker ng-model="entity.termEndBing" data-datetimepicker-config="{ dropdownSelector: '#dropdown2',minView:'day' }" />
+            </ul>
+            <button style="margin-bottom: 10px;margin-left: 5px" ng-if="search.date" ng-click="clearDate()">清空</button>
+          </div>
+        </div>
+      </div>
+
+ <!--     <div class="control-group">
+        <label class="control-label">夏令开始</label>
+        &lt;!&ndash;<div class="controls">&ndash;&gt;
+          &lt;!&ndash;<div class="btn-group" style="font-size: 16px">&ndash;&gt;
+            &lt;!&ndash;<input class="input-xlarge focused" type="text" ng-model="entity.summaryStart">&ndash;&gt;
+          &lt;!&ndash;</div>&ndash;&gt;
+        &lt;!&ndash;</div>&ndash;&gt;
+        <div class="controls" style="font-size: 14px">
+          <div class="dropdown">
+            <a class="dropdown-toggle" id="dropdown3" role="button" data-toggle="dropdown" data-target="#" href="#">
+              <div class="input-append"><input readonly="readonly" type="text" class="input-large" ng-model="entity.summaryStart" required><span class="add-on"><i class="icon-calendar"></i></span>
+              </div>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <datetimepicker ng-model="entity.summaryStartBing" data-datetimepicker-config="{ dropdownSelector: '#dropdown3',minView:'day' }" />
+            </ul>
+            <button style="margin-bottom: 10px;margin-left: 5px" ng-if="search.date" ng-click="clearDate()">清空</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">夏令结束</label>
+        &lt;!&ndash;<div class="controls">&ndash;&gt;
+          &lt;!&ndash;<div class="btn-group" style="font-size: 16px">&ndash;&gt;
+            &lt;!&ndash;<input class="input-xlarge focused" type="text" ng-model="entity.summaryEnd">&ndash;&gt;
+          &lt;!&ndash;</div>&ndash;&gt;
+        &lt;!&ndash;</div>&ndash;&gt;
+
+        <div class="controls" style="font-size: 14px">
+          <div class="dropdown">
+            <a class="dropdown-toggle" id="dropdown4" role="button" data-toggle="dropdown" data-target="#" href="#">
+              <div class="input-append"><input readonly="readonly" type="text" class="input-large" ng-model="entity.summaryEnd" required><span class="add-on"><i class="icon-calendar"></i></span>
+              </div>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <datetimepicker ng-model="entity.summaryEndBing" data-datetimepicker-config="{ dropdownSelector: '#dropdown4',minView:'day' }" />
+            </ul>
+            <button style="margin-bottom: 10px;margin-left: 5px" ng-if="search.date" ng-click="clearDate()">清空</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">冬令开始</label>
+        &lt;!&ndash;<div class="controls">&ndash;&gt;
+          &lt;!&ndash;<div class="btn-group" style="font-size: 16px">&ndash;&gt;
+            &lt;!&ndash;<input class="input-xlarge focused" type="text" ng-model="entity.winterStart">&ndash;&gt;
+          &lt;!&ndash;</div>&ndash;&gt;
+        &lt;!&ndash;</div>&ndash;&gt;
+
+        <div class="controls" style="font-size: 14px">
+          <div class="dropdown">
+            <a class="dropdown-toggle" id="dropdown5" role="button" data-toggle="dropdown" data-target="#" href="#">
+              <div class="input-append"><input readonly="readonly" type="text" class="input-large" ng-model="entity.winterStart" required><span class="add-on"><i class="icon-calendar"></i></span>
+              </div>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <datetimepicker ng-model="entity.winterStartBing" data-datetimepicker-config="{ dropdownSelector: '#dropdown5',minView:'day' }" />
+            </ul>
+            <button style="margin-bottom: 10px;margin-left: 5px" ng-if="search.date" ng-click="clearDate()">清空</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">冬令结束</label>
+        &lt;!&ndash;<div class="controls">&ndash;&gt;
+          &lt;!&ndash;<div class="btn-group" style="font-size: 16px">&ndash;&gt;
+            &lt;!&ndash;<input class="input-xlarge focused" type="text" ng-model="entity.winterEnd">&ndash;&gt;
+          &lt;!&ndash;</div>&ndash;&gt;
+        &lt;!&ndash;</div>&ndash;&gt;
+
+        <div class="controls" style="font-size: 14px">
+          <div class="dropdown">
+            <a class="dropdown-toggle" id="dropdown6" role="button" data-toggle="dropdown" data-target="#" href="#">
+              <div class="input-append"><input readonly="readonly" type="text" class="input-large" ng-model="entity.winterEnd" required><span class="add-on"><i class="icon-calendar"></i></span>
+              </div>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <datetimepicker ng-model="entity.winterEndBing" data-datetimepicker-config="{ dropdownSelector: '#dropdown6',minView:'day' }" />
+            </ul>
+            <button style="margin-bottom: 10px;margin-left: 5px" ng-if="search.date" ng-click="clearDate()">清空</button>
+          </div>
+        </div>
+
+      </div>-->
+
+
+      <div class="control-group">
+        <label class="control-label">单双周</label>
+        <div class="controls">
+          <!--<form name="evenUsedForm"  ng-init="entity.evenUsed='0'">-->
+          <form name="evenUsedForm" >
+            <div class="btn-group" style="font-size: 16px">
+              <input type="radio" ng-model="entity.evenUsed" value="0">
+              &nbsp;&nbsp;有效
+            </div>
+
+            <div class="btn-group" style="font-size: 16px">
+              <input type="radio" ng-model="entity.evenUsed" value="1">
+              &nbsp;&nbsp;无效
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">学生提前请假天数</label>
+        <div class="controls">
+          <div class="btn-group" style="font-size: 16px;width: 200px">
+            <!--<input class="input-xlarge focused" type="number" ng-model="entity.studentLeaveDay">-->
+            <div ui-slider min="1" max="7" ng-model="entity.studentLeaveDay"></div>{{entity.studentLeaveDay}}
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">老师调课提前天数</label>
+        <div class="controls">
+          <div class="btn-group" style="font-size: 16px;width: 200px">
+            <!--<input class="input-xlarge focused" type="number" ng-model="entity.teacherChangeCourseDay" max="7" min="1">-->
+            <div ui-slider min="1" max="7" ng-model="entity.teacherChangeCourseDay"></div>{{entity.teacherChangeCourseDay}}
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-actions" style="background: #ffffff">
+        <button ng-disabled="editForm.$error.required" ng-click="updateWebsiteSetting(entity)" class="btn btn-primary btn-large">保存</button>
+      </div>
+    </fieldset>
+  </form>
+</div>

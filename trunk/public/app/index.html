@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html na-app="AMS4U">
+<head>
+	
+	<!-- start: Meta -->
+	<meta charset="utf-8">
+	<title>考勤Web系统</title>
+  <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+
+	<!--<meta name="description" content="考勤Web系统">-->
+	<!--<meta name="author" content="Extensivepro">-->
+	<!--<meta name="keyword" content="考勤Web系统">-->
+	<!-- end: Meta -->
+	
+	<!-- start: Mobile Specific -->
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<!-- end: Mobile Specific -->
+	
+	<!-- start: CSS -->
+	<link href="lib/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+	<link href="lib/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+	<!-- <link href="lib/angular-ui-select2/docs/styles.css" rel="stylesheet"> -->
+	<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+	<!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet"> -->
+	<link href="css/style.min.css" rel="stylesheet">
+	<link href="css/style-responsive.min.css" rel="stylesheet">
+	<link href="css/retina.css" rel="stylesheet">
+	<link href="css/bootstrap-timepicker.css" rel="stylesheet">
+  <link href="css/views/ams4u.css" rel="stylesheet">
+  <link href="css/views/jquery-ui.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="lib/angular-bootstrap-datetimepicker/src/css/datetimepicker.css"/>
+
+	<!-- end: CSS -->
+	
+
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<link id="ie-style" href="css/ie.css" rel="stylesheet">
+	<![endif]-->
+	
+	<!--[if IE 9]>
+		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
+	<![endif]-->
+	
+	<link rel="shortcut icon" href="ico/favicon.png">
+	<!-- end: Favicon and Touch Icons -->	
+		
+</head>
+
+<body>
+
+  <div ng-view></div>
+
+	<!-- start: JavaScript-->
+	<script src="lib/jquery/jquery.min.js"></script>
+	<script src="lib/jquery-migrate/jquery-migrate.min.js"></script>
+	<script src="js/libs/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="lib/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<script src="lib/modernizr/modernizr.js"></script>
+  <script src="lib/bootstrap/docs/assets/js/bootstrap.js"></script>
+	<script src="lib/jquery.cookie/jquery.cookie.js"></script>
+	<script src='lib/fullcalendar/fullcalendar.min.js'></script>
+	<script src="lib/excanvas/excanvas.js"></script>
+	<script src="js/libs/jquery.dataTables.min.js"></script>
+	<script src="js/libs/bootstrap-timepicker.js"></script>
+	<script src="js/libs/bootstrap-timepicker.js"></script>
+	<script src="js/libs/bootstrap-timepicker.js"></script>
+	<script src="js/libs/extroMethodes.js"></script>
+	<script src="js/libs/kits.js"></script>
+
+	<!--<script src="js/libs/jquery-1.10.2.js"></script>-->
+	<!--<script src="js/libs/jquery-ui.min.js"></script>-->
+
+
+
+	<script src="js/custom.min.js"></script>
+	<!-- Start: AngularJS -->
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular-route/angular-route.min.js"></script>
+	<script src="lib/angular-cookies/angular-cookies.min.js"></script>
+	<script src="lib/angular-resource/angular-resource.min.js"></script>
+	<script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+  <script type="text/javascript" src="lib/moment/moment.js"></script>
+  <script type="text/javascript" src="lib/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+  <script type="text/javascript" src="lib/angular-strap/dist/angular-strap.min.js"></script>
+  <script type="text/javascript" src="lib/ngSelect/ngSelect.min.js"></script>
+
+
+  <script>
+    //optional
+    FileAPI = {
+      jsPath: "lib/angular-file-upload/FileAPI.min.js",
+      staticPath: "lib/angular-file-upload/FileAPI.flash.swf"
+    }
+  </script>
+
+  <script src="lib/angular-file-upload/angular-file-upload.js"></script>
+
+
+	<!-- End:AngularJS -->
+	<!-- Start: Application -->
+	<script src="js/app.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/directives.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/services/users.js"></script>
+	<script src="js/services/basicdata/student.js"></script>
+	<script src="js/services/basicdata/college.js"></script>
+
+	<script src="js/services/pagination.js"></script>
+	<script src="js/services/localStorage.js"></script>
+	<script src="js/services/basicdata/classroom.js"></script>
+	<script src="js/services/basicdata/department.js"></script>
+	<script src="js/services/basicdata/campus.js"></script>
+	<script src="js/services/basicdata/collegeLeader.js"></script>
+	<script src="js/services/basicdata/schoolLeader.js"></script>
+	<script src="js/services/basicdata/office.js"></script>
+	<script src="js/services/basicdata/building.js"></script>
+	<script src="js/services/basicdata/subject.js"></script>
+	<script src="js/services/basicdata/classes.js"></script>
+	<script src="js/services/basicdata/teacher.js"></script>
+	<script src="js/services/basicdata/counsellor.js"></script>
+	<script src="js/services/basicdata/schedule.js"></script>
+	<script src="js/services/course/course.js"></script>
+	<script src="js/services/course/courseSchedule.js"></script>
+	<script src="js/services/course/studentCourse.js"></script>
+	<script src="js/services/course/leave.js"></script>
+	<script src="js/services/course/transferCourses.js"></script>
+	<script src="js/services/query/attendRecord.js"></script>
+
+
+	<script src="js/controllers/sign.js"></script>
+	<script src="js/controllers/index.js"></script>
+	<script src="js/controllers/header.js"></script>
+	<script src="js/controllers/mainmenu.js"></script>
+	<script src="js/controllers/basic.js"></script>
+	<script src="js/controllers/users.js"></script>
+
+	<script src="js/controllers/basicdata/student.js"></script>
+	<script src="js/controllers/basicdata/college.js"></script>
+	<script src="js/controllers/basicdata/classroom.js"></script>
+	<script src="js/controllers/basicdata/department.js"></script>
+	<script src="js/controllers/basicdata/campus.js"></script>
+	<script src="js/controllers/basicdata/collegeLeader.js"></script>
+	<script src="js/controllers/basicdata/schoolLeader.js"></script>
+	<script src="js/controllers/basicdata/office.js"></script>
+	<script src="js/controllers/basicdata/building.js"></script>
+	<script src="js/controllers/basicdata/subject.js"></script>
+	<script src="js/controllers/basicdata/classes.js"></script>
+	<script src="js/controllers/basicdata/teacher.js"></script>
+	<script src="js/controllers/basicdata/counsellor.js"></script>
+	<script src="js/controllers/basicdata/schedule.js"></script>
+	<script src="js/controllers/basicdata/scheduleQuery.js"></script>
+	<script src="js/controllers/course/course.js"></script>
+	<script src="js/controllers/course/courseSchedule.js"></script>
+	<script src="js/controllers/course/studentCorrespond.js"></script>
+	<script src="js/controllers/course/leaveController.js"></script>
+	<script src="js/controllers/course/transferCourses.js"></script>
+	<script src="js/controllers/websiteSetting.js"></script>
+	<script src="js/controllers/query.js"></script>
+	<script src="js/controllers/course/transferCoursesPermit.js"></script>
+	<script src="js/controllers/course/courseScheduleQuery.js"></script>
+	<script src="js/controllers/query/schoolAllCourse.js"></script>
+	<script src="js/controllers/query/queryByTeacher.js"></script>
+	<script src="js/controllers/query/queryByCounsellor.js"></script>
+	<script src="js/controllers/query/studentQuery.js"></script>
+  <script src="js/libs/slider.js"></script>
+	<script src="js/init.js"></script>
+	<!-- End: Application -->
+	<!-- //livereload script rendered  -->
+	<!--<script type="text/javascript" src="http://192.168.0.115:35729/livereload.js"></script>-->
+	<!--<script type="text/javascript" src="http://localhost:35729/livereload.js"></script>-->
+	<!-- end: JavaScript-->
+	
+</body>
+</html>

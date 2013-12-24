@@ -1,0 +1,13 @@
+{
+  "name": "excanvas",
+  "homepage": "https://github.com/arv/excanvas",
+  "_release": "master",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e6f8a58dbce5858586564a1ba4543f122ef63225"
+  },
+  "_source": "git://github.com/arv/excanvas.git",
+  "_target": "*",
+  "_originalSource": "excanvas"
+}

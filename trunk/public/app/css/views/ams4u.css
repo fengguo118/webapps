@@ -1,0 +1,37 @@
+
+div#login{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    bottom:0;
+
+    right:0;
+
+    z-index:-1;
+
+}
+
+div#login > img#loginbg {
+
+    height:100%;
+
+    width:100%;
+
+    border:0;
+
+
+}
+
+div#listFooter>ul{
+    cursor: pointer;
+}
+
+.selected{
+    /*background: #0064cd;*/
+    box-shadow: 0 0 10px 2px #008FD4;
+}
+

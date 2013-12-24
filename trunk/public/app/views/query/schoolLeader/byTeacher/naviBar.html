@@ -1,0 +1,29 @@
+<div>
+  <div>
+    <div>
+      <div style="float: left;margin-right: 10px">
+        <div class="btn-group">
+          <select ng-model="condition.college" ng-options="college.name for college in colleges" style="width: 190px">
+            <option value="">-- 选择学院 --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="float: left;margin-right: 10px">
+        <div class="btn-group">
+          <select ng-model="condition.teacher" ng-options="teacher.name for teacher in teacheres" style="width: 190px">
+            <option value="">-- 选择老师 --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="span2" style="float: right;margin-left: 10px;">
+    <img src="img/custom/query_btn_n.png" style="margin-bottom: 5px;margin-right: 5px;cursor: pointer;float: right" ng-click="queryAttendData(condition)" title="查询">
+    <br>
+  </div>
+
+</div>

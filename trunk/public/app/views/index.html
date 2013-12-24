@@ -1,0 +1,56 @@
+<!-- start: Header -->
+<div ng-include="'views/header.html'"></div>
+<!-- end: Header -->
+
+<div class="container-fluid-full">
+	<!-- start: Main Menu && Content-->
+	<div class="row-fluid" ng-controller="MainMenuController">
+		<!-- start: Main Menu -->
+		<div id="sidebar-left" class="span2" style="width: 230px;background: #4B5D66">
+			<div class="nav-collapse sidebar-nav">
+				<ul class="nav nav-tabs nav-stacked main-menu">
+					<li ng-repeat="view in views" ng-class="{active:view == currentView && !view.submenus}">
+						<a ng-click="selectView(view)" ng-class="{dropmenu:view.submenus.length > 0}" style="background: #4B5D66;font-weight: bold;font-size: 16px">
+							<!--<i class={{view.icon}}></i>-->
+              <i style="margin-right: 0px!important"><img style="margin-bottom: 4px!important;" src={{view.icon}}></i>
+							<span class="hidden-tablet" style="cursor:pointer"> {{view.name}}</span>
+							<!--<span class="label" ng-if="view.submenus.length">{{view.submenus.length}}</span>-->
+						</a>
+						<ul ng-show="view.submenus.length && (view == currentView || -1 < view.submenus.indexOf(currentView))" style="display: block">
+							<li ng-repeat="subview in view.submenus" ng-class="{active:subview == currentView}" >
+								<a class="submenu" ng-click="selectView(subview)" style="background: #4B5D66;cursor:pointer;font-weight: bold">
+									<i class={{subview.icon}}></i>
+									<span class="hidden-tablet" ng-init="currentStyle = true?'color:#5fcdfd':''" style={{currentStyle}}> {{$index + 1}}.{{subview.name}}</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- end: Main Menu -->
+	
+
+		<!-- start: Content -->
+		<div id="content" class="span10">
+			<div style="margin-left: 24px" ng-include="currentView.path"/>
+		</div>
+		<!-- end: Content -->
+	</div><!--/fluid-row-->
+	<!-- end: Main Menu && Content-->
+			
+	<!--<div class="clearfix"></div>-->
+	
+	<footer>
+		<p>
+			<span style="text-align:left;float:left">
+				&copy; 2013 <a href="#" alt="考勤Web系统">考勤Web系统</a>
+			</span>
+			<span class="hidden-phone" style="text-align:right;float:right">
+				<!--Powered by: <a href="http://extensivepro.com" alt="泛盈科技">泛盈科技</a>-->
+        Powered by: 泛盈科技
+			</span>
+		</p>
+	</footer>
+			
+</div><!--/.fluid-container-->

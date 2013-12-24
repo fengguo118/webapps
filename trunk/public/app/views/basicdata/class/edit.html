@@ -1,0 +1,26 @@
+
+<div class="control-group">
+	<label class="control-label">专业</label>
+	<div class="controls">
+		<div class="btn-group">
+      <select ng-model="entity.subject" ng-options="subject.name for subject in options.subjects " required>
+        <option value="">-- 选择专业 --</option>
+      </select>
+		</div>
+    <i class="icon-asterisk" />
+	</div>
+</div>
+
+
+
+<div class="control-group">
+  <label class="control-label">年级</label>
+  <div class="controls">
+    <div class="btn-group">
+      <select ng-model="entity.grade" ng-options="grade for grade in grades" required>
+        <option value="">-- 选择年级 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>

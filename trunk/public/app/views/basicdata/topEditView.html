@@ -1,0 +1,33 @@
+<div class="control-group">
+  <label class="control-label">用户名</label>
+  <div class="controls">
+    <input class="input-xlarge focused" type="text" ng-model="entity.username" ng-required="!entity.id" >
+    <i class="icon-asterisk" />
+    <h3 style="color: red">&nbsp;{{userNameDuplication}}</h3>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">用户密码</label>
+  <div class="controls">
+    <input class="input-xlarge focused" type="password" ng-model="entity.password" ng-required="!entity.id" >
+    <i class="icon-asterisk" />
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">确认密码</label>
+  <div class="controls">
+    <input class="input-xlarge focused" type="password" ng-model="entity.passwordEnsure" ng-required="!entity.id" >
+    <i class="icon-asterisk" />
+  </div>
+</div>
+<div class="control-group" style="width: 220px;margin-left: 180px;">
+  <div class="alert alert-block alert-danger fade in" style="display: none;margin-bottom: 0px">
+    <button type="button" class="close" onclick="$('.alert').hide()">×</button>
+    <h4 class="alert-heading">警告！</h4>
+    <p class="ng-binding">两次输入密码不相等！</p>
+  </div>
+</div>
+<hr>
+

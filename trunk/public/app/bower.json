@@ -1,0 +1,30 @@
+{
+  "name": "ams4u",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "angular/bower-angular#v1.2.0-rc.2",
+    "angular-resource": "angular/bower-angular-resource#1.2.0-rc.1",
+    "angular-cookies": "angular/bower-angular-cookies#1.2.0-rc.1",
+    "angular-route": "angular/bower-angular-route#1.2.0-rc.1",
+    "angular-bootstrap": "~0.5.0",
+    "bootstrap": "2.3.2",
+    "modernizr": "*",
+    "json3": "~3.2.4",
+    "jquery": "1.10.2",
+    "jquery.cookie": "*",
+    "jquery-migrate": "1.2.1",
+    "jquery-ui-touch-punch": "*",
+    "fullcalendar": "~1.6.3",
+    "excanvas": "*",
+    "raphael": "2.1.0",
+    "angular-bootstrap-datetimepicker": "latest",
+    "moment": "latest",
+    "angular-strap": "git://github.com/ngot/angular-strap#master",
+    "ngSelect": "~0.1.0",
+    "angular-file-upload" : "git://github.com/danialfarid/angular-file-upload.git#master"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.0.5",
+    "angular-scenario": "~1.0.5"
+  }
+}

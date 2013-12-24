@@ -1,0 +1,27 @@
+
+<div class="control-group">
+  <label class="control-label">年制</label>
+  <div class="controls">
+    <div class="btn-group">
+      <select ng-model="entity.years" required>
+        <option value="">-- 选择年制 --</option>
+        <option value="3">三年制</option>
+        <option value="4">四年制</option>
+        <option value="5">五年制</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>
+
+<div class="control-group">
+	<label class="control-label">学院</label>
+	<div class="controls">
+		<div class="btn-group">
+      <select ng-model="entity.college" ng-options="college.name for college in options.colleges " required>
+        <option value="">-- 选择学院 --</option>
+      </select>
+		</div>
+    <i class="icon-asterisk" />
+	</div>
+</div>

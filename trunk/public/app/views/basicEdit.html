@@ -1,0 +1,68 @@
+<div class="box-header">
+	<h2><i class="icon-user-md"></i><span class="break"></span>
+		<!--<span ng-show='!entity.id'>新增{{currentView.name}}</span>-->
+		<!--<span ng-show='!!entity.id'>编辑{{currentView.name}}</span>-->
+    <span ng-show='!entity.id'>新增{{itemName}}</span>
+    <span ng-show='!!entity.id'>编辑{{itemName}}</span>
+	</h2>
+	<div class="box-icon">
+		<a ng-if="itemName!=='调课管理'" ng-click="cancelEdit()" class="btn-close"><i class="icon-remove"></i></a>
+		<a ng-if="itemName=='调课管理'" ng-click="initSelf()" class="btn-close"><i class="icon-remove"></i></a>
+	</div>
+</div>
+<div class="box-content">
+	<form class="form-horizontal" ng-model="entity" name="editForm">
+		<fieldset>
+			<div class="control-group">
+				<label class="control-label"></label>
+				<i class="icon-asterisk"> 标记的项目不能为空</i>
+			</div>
+      <div ng-show='!entity.id'>
+        <div ng-include="topEditView" />
+      </div>
+			<div class="control-group" ng-repeat="field in profileFields" ng-hide="field.hide || (field.readonly && !(!entity.id && field.creatable))">
+				<label class="control-label">{{field.title}}</label>
+				<div class="controls">
+					<input class="input-xlarge focused" type="text" ng-model="entity[field.name]" ng-required="!!field.required">
+					<i class="icon-asterisk" ng-if="!!field.required" />
+				</div>
+			</div>
+			<div ng-include="editView" />
+			<div class="form-actions" style="background: #ffffff" ng-if="itemName != '调课管理'">
+				<button ng-disabled="editForm.$error.required" ng-click="create(entity)" class="btn btn-primary btn-large" ng-if="!entity.id">创建</button>
+				<button ng-disabled="editForm.$error.required" ng-click="update(entity)" class="btn btn-primary btn-large" ng-if="!!entity.id">保存</button>
+				<button ng-click="cancelEdit()" class="btn btn-large">取消</button>
+			</div>
+		</fieldset>
+	</form>
+</div>
+
+<!-- start: confirm New User Modal -->
+<div modal="shouldOpenCreate" class="modal hide fade">
+	<div class="modal-header">
+		<button type="button" class="close" ng-click="closeCreate()">×</button>
+		<h3>新建用户</h3>
+	</div>
+	<div class="modal-body">
+		<form ng-model="entity">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label" for="username">用户名</label>
+					<div class="controls">
+					  <input class="input-xlarge span5 focused" ng-model="entity.username" id="username" type="text" required>
+					</div>
+			  </div>
+				<div class="alert alert-danger fade in" ng-show="showSettingMessage" style="display: none;">
+		      <button type="button" class="close" data-dismiss="alert">×</button>
+		      <h4 class="alert-heading">警告！</h4>
+		      <p class="ng-binding">{{errorDetail}}</p>
+			  </div>
+			</fieldset>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<a class="btn" ng-click="closeCreate()">关闭</a>
+		<a class="btn btn-primary" ng-click="setPassword()">修改密码</a>
+	</div>
+</div>
+<!-- end: confirm New User Modal -->

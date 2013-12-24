@@ -1,0 +1,106 @@
+<div class="control-group">
+  <label class="control-label">班级</label>
+  <div class="controls">
+    <!--<div class="btn-group" ng-init="entity.class_o = options.classes[0]">-->
+    <div class="btn-group">
+      <select ng-model="entity.class_o" ng-options="class_o.name for class_o in options.classes ">
+        <option value="">-- 选择班级 --</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">学生</label>
+  <div class="controls">
+    <!--<div class="btn-group" ng-init="entity.student = options.students[0]">-->
+    <div class="btn-group" >
+      <select ng-model="entity.student" ng-options="student.name for student in options.students " required>
+        <option value="">-- 选择学生 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">类型</label>
+  <div class="controls">
+    <form name="evenUsedForm">
+      <!--<div class="btn-group" style="font-size: 16px">-->
+        <!--<input type="radio" ng-model="entity.type" value="0" required>-->
+        <!--&nbsp;&nbsp;病假-->
+      <!--</div>-->
+
+      <!--<div class="btn-group" style="font-size: 16px">-->
+        <!--<input type="radio" ng-model="entity.type" value="1" required>-->
+        <!--&nbsp;&nbsp;事假-->
+      <!--</div>-->
+
+      <input type="radio" ng-model="entity.type" value='0' required>
+      &nbsp;&nbsp;病假
+      <input type="radio" ng-model="entity.type" value='1' required>
+      &nbsp;&nbsp;事假
+
+      &nbsp;&nbsp;<i class="icon-asterisk" />
+    </form>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">开始时间</label>
+  <div class="controls">
+    <div class="dropdown">
+      <a class="dropdown-toggle" id="dropdown1" role="button" data-toggle="dropdown" data-target="#" href="#">
+        <div class="input-append"><input readonly="readonly" type="text" class="input-large" ng-model="entity.startDateTime" required><span class="add-on"><i class="icon-calendar"></i></span>
+        </div>
+      </a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <datetimepicker ng-model="entity.startDateTimeBing" data-datetimepicker-config="{ dropdownSelector: '#dropdown1' }" />
+      </ul>
+      <i class="icon-asterisk" />
+    </div>
+  </div>
+
+</div>
+
+
+<div class="control-group">
+  <label class="control-label">结束时间</label>
+  <div class="controls">
+    <div class="dropdown">
+      <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
+        <div class="input-append"><input readonly="readonly" type="text" class="input-large" ng-model="entity.endDateTime" required><span class="add-on"><i class="icon-calendar"></i></span>
+        </div>
+      </a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <datetimepicker ng-model="entity.endDateTimeBing" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"/>
+      </ul>
+      <i class="icon-asterisk" />
+    </div>
+  </div>
+
+</div>
+
+<div class="control-group">
+  <label class="control-label">原因</label>
+  <div class="controls">
+    <textarea ng-model="entity.reason" required></textarea>
+    <i class="icon-asterisk" />
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">批准人</label>
+  <div class="controls">
+    <label style="margin-bottom: 0px;margin-top: 5px">{{uuser.name}}</label>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">批准时间</label>
+  <div class="controls">
+    <label ng-if="!entity.permitDate" style="margin-bottom: 0px;margin-top: 5px">{{now|date:'yyyy-MM-dd HH:mm'}}</label>
+    <label ng-if="entity.permitDate" style="margin-bottom: 0px;margin-top: 5px">{{entity.permitDate}}</label>
+  </div>
+</div>

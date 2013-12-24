@@ -1,0 +1,59 @@
+<div class="control-group">
+  <label class="control-label">学号</label>
+  <div class="controls">
+    <input class="input-xlarge" type="text" ng-model="entity.student_id" required ui-Blur="checkDuplication()">
+    <i class="icon-asterisk"/>
+    <h3 style="color: red">&nbsp;{{studentIDDuplication}}</h3>
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">学院</label>
+
+  <div class="controls">
+    <div class="btn-group">
+      <select ng-model="entity.college" ng-options="college.name for college in colleges" style="width: 190px" >
+        <option value="">-- 选择学院 --</option>
+      </select>
+    </div>
+    <!--<i class="icon-asterisk"/>-->
+  </div>
+</div>
+
+<div class="control-group">
+  <label class="control-label">专业</label>
+
+  <div class="controls">
+    <div class="btn-group">
+      <select ng-model="entity.subject" ng-options="subject.name for subject in subjectes" style="width: 190px" >
+        <option value="">-- 选择专业 --</option>
+      </select>
+    </div>
+    <!--<i class="icon-asterisk"/>-->
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">年级</label>
+
+  <div class="controls">
+    <div class="btn-group">
+      <select ng-model="entity.grade" style="width: 190px" ng-options="grade for grade in grades" >
+        <option value="">-- 选择年级 --</option>
+      </select>
+    </div>
+    <!--<i class="icon-asterisk"/>-->
+  </div>
+</div>
+</div>
+<div class="control-group">
+  <label class="control-label">班级</label>
+
+  <div class="controls">
+    <div class="btn-group">
+      <select ng-model="entity.class_o" ng-options="class_o.name for class_o in classes" style="width: 190px" required>
+        <option value="">-- 选择班级 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk"/>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="container-fluid">
+
+  <div class="navbar">
+    <div class="navbar-inner" style="height: 44px;padding:0px 0px 0px 0!important">
+      <div class="container-fluid" >
+        <img src="img/custom/icon_logo.png" style="padding: 0px;height: 44px;width: 44px;position: absolute;left: 0px">
+        <div class="row-fluid" style="float: left">
+          <a class="brand span2" style="background: #ffffff;border-bottom: 0px;left: 44px;width: 186px;height: 44px">
+            <span style="color: #008fd4;font-family: 'Lato', sans-serif;font-weight: bold">学院考勤系统</span>
+          </a>
+        </div>
+        <div style="float: right">
+          <a class="span2" style="float: right;right: 0;position: absolute;width: 228px;background: #008fd4;height: 44px"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	<div id="login_content" class="row-fluid">
+		<div class="row-fluid">
+			<div class="login-box">
+				<h1 style="text-align: center;color: #008fd4;font-weight: bold">登录学院考勤系统</h1>
+				<form class="form-horizontal" ng-model="loginUser" ui-keypress="{13:'Login($event)'}">
+					<fieldset>
+						<span style="color: #1f6377;font-family: 'Lato', sans-serif;font-weight: bold">用户名：</span>
+            <input class="input-large span12" style="color: #000000!important;" ng-model="loginUser.username" name="username" type="text"  required autofocus="true"/>
+
+						<span style="color: #1f6377;font-family: 'Lato', sans-serif;font-weight: bold">密码：</span>
+            <input class="input-large span12" style="color: #000000!important;" ng-model="loginUser.password" name="password" type="password"  required />
+
+						<div class="clearfix"></div>
+					
+						<!--<label class="remember" for="remember" style="float: right;color:#008fd4;font-weight: bold ">-->
+							<!--<input type="checkbox" id="remember"> 记住我 </input>-->
+						<!--</label>-->
+					
+						<div class="clearfix"></div>
+
+						<button type="submit" class="btn btn-primary span12" ng-click="Login()">登录</button>
+					</fieldset>	
+				</form>
+				<div class="alert alert-block alert-danger fade in" style="display: none">
+		      <button type="button" class="close" onclick="$('.alert').hide()">×</button>
+		      <h4 class="alert-heading">警告！</h4>
+		      <p class="ng-binding">{{errorLoginDetail}}</p>
+		    </div>
+				<hr>
+				<p class="text-center"> COPYRIGHT &copy;2013 expro.COM ALL RIGHT</p>
+			</div>
+		</div>
+	</div>
+
+    <div id="login"><img id="loginbg" src="img/custom/login_bg.png" /></div>
+</div>

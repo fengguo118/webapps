@@ -1,0 +1,11 @@
+<div class="control-group">
+  <label class="control-label">所属教学楼</label>
+  <div class="controls">
+    <div class="btn-group">
+        <select ng-model="entity.building" ng-options="building.name for building in options.buildings " required>
+        <option value="">-- 选择教学楼 --</option>
+      </select>
+    </div>
+    <i class="icon-asterisk" />
+  </div>
+</div>

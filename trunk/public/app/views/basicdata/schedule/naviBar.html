@@ -1,0 +1,34 @@
+<div>
+  <div>
+    <div>
+      <div style="float: left;margin-right: 10px">
+        <div class="btn-group">
+          <select ng-model="condition.campus" ng-options="campus.name for campus in campuses" style="width: 190px">
+            <option value="">-- 选择校区 --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+<!--    <div>
+      <div style="float: left;margin-right: 10px">
+        <div class="btn-group">
+          <select ng-model="condition.season" style="width: 190px">
+            <option value="">-- 选择时令 --</option>
+            <option value="0">夏令</option>
+            <option value="1">冬令</option>
+          </select>
+        </div>
+      </div>
+    </div>-->
+
+  </div>
+
+  <div class="span2" style="float: right;margin-left: 10px;">
+    <img src="img/custom/add_btn_n.png" style="margin-bottom: 5px;margin-right: 5px;cursor: pointer;float: right" title="新增"
+         ng-click={{fieldOperations[0].op}}>
+    <img src="img/custom/query_btn_n.png" style="margin-bottom: 5px;margin-right: 5px;cursor: pointer;float: right" ng-click="querySchedule()" title="查询">
+  </div>
+</div>
+
+

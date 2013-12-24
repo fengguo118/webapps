@@ -1,0 +1,44 @@
+<div ng-controller="AllCourseQueryPageController" ng-init="initSelfAllCourse()">
+  <div class="box-header" style="background: #ffffff;height: 45px;vertical-align: middle">
+    <h2 style="color: #008FD4;font-weight: bold;font-size: 20px"><span class="break"></span>{{currentView.name}}</h2>
+  </div>
+  <div style="margin-left: 20px;margin-right: 20px;background: #ffffff">
+    <hr style="margin-top: 0px;margin-bottom: 0px;color: #E5E5E5">
+  </div>
+  <div class="box-content" style="padding-left: 22px;padding-right: 22px">
+    <div class="row-fluid" >
+      <div ng-include="topNaviBar" />
+    </div>
+
+    <table class="table table-striped table-bordered bootstrap-datatable datatable">
+      <thead>
+      <tr style="background: #008FD4">
+        <th ng-repeat="field in fields" style="color: #ffffff;text-align: center;font-weight: bold;font-size: 18px">{{field.title}}</th>
+        <!--<th style="color: #ffffff;text-align: center;font-weight: bold;font-size: 18px">操作</th>-->
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="entity in entities">
+        <td class="center" ng-repeat="field in fields" style="text-align: center">
+          <span ng-class="entity.fieldClass[field.name]" ng-if="field.value">{{field.value(entity)}}</span>
+          <span ng-class="entity.fieldClass[field.name]" ng-if="!field.value">{{valueOfKeyString(entity, field.name)}}</span>
+        </td>
+        <!--<td class="center btn-toolbar" style="text-align: center">-->
+          <!--<a ng-click="queryOne(entity)" class="btn btn-success">-->
+            <!--<i class="icon-zoom-in"></i>-->
+          <!--</a>-->
+        <!--</td>-->
+      </tr>
+      </tbody>
+    </table>
+
+    <!--<div class="row-fluid">-->
+      <!--<div class="span12" >-->
+        <!--显示 {{pagination.iStart}} ~ {{pagination.iEnd}} / {{pagination.iTotal}} 条-->
+      <!--</div>-->
+      <!--<div class="span12 center" >-->
+        <!--<pagination id="listFooter"  num-pages="pagination.iPages" current-page="pagination.iPage" previous-text="上一页" next-text="下一页"></pagination>-->
+      <!--</div>-->
+    <!--</div>-->
+  </div>
+</div>

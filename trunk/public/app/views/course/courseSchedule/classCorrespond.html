@@ -1,0 +1,77 @@
+<div class="box-header">
+  <h2><i ng-class="currentView.icon"></i><span class="break"></span>{{currentView.name}} - 课程班级对应</h2>
+  <div class="box-icon">
+    <a ng-click="showList()" class="btn-close"><i class="icon-remove"></i></a>
+  </div>
+</div>
+
+<div class="box-content" ng-init="" style="padding-left: 40px!important;">
+
+  <div>
+    <!-- display of selection -->
+    <h1>
+      选择班级
+      <!--{{selection}}-->
+      <!--<div ng-repeat="s in selection">-->
+        <!--{{s}}-->
+      <!--</div>-->
+
+    </h1>
+    <br>
+    <!-- bind scope.selection to ngSelect model -->
+    <!-- add "selected" class on option selected -->
+    <!-- enable multiple selection -->
+    <!--<div class="" ng-select="selection" select-class="{'selected': $optSelected}" select-multiple>-->
+      <!--<div class="span3">-->
+        <!--&lt;!&ndash; five images with number as option value &ndash;&gt;-->
+        <!--<div class="img-polaroid img-circle" ng-repeat="class in classes" ng-select-option="{{ class }}" style="margin-bottom: 10px;cursor: pointer">-->
+          <!--<div style="margin-left: 10px">{{$index + 1}}&nbsp;&nbsp;:&nbsp;&nbsp;{{class.name}}</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <select size="15" multiple ng-multiple="true"
+            ng-model="selection" ng-options="class.name for class in classes"></select>
+
+  </div>
+
+
+
+
+
+
+  <!--<div class="span12">-->
+    <!--<a ng-repeat="shortcut in profileShortcuts" ng-class="shortcut.class" ng-click={{shortcut.op}}>-->
+      <!--<i ng-class="shortcut.icon" />-->
+      <!--<p>{{shortcut.text}}</p>-->
+    <!--</a>-->
+  <!--</div>-->
+
+  <!--<div class="span12">-->
+    <!--<div class="span1" />-->
+    <!--<div class="span1" ng-show="profileAvatar">-->
+      <!--<img src={{profileAvatar}} alt="Avatar" class="img-circle">-->
+    <!--</div>-->
+    <!--<div class="span9">-->
+      <!--<table class="table table-striped">-->
+        <!--<tbody>-->
+        <!--<tr ng-repeat="field in profileFields" ng-show="!field.unlist">-->
+          <!--<td class="center"><h3>{{field.title}}</h3></td>-->
+          <!--<td class="center">-->
+            <!--<h4 ng-if="field.value">{{field.value(entity)}}</h4>-->
+            <!--<h4 ng-if="!field.value">{{valueOfKeyString(entity, field.name)}}</h4>-->
+          <!--</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+      <!--</table>-->
+    <!--</div>-->
+  <!--</div>-->
+  <div class="clearfix"></div>
+  <div class="form-actions" style="background: #ffffff">
+    <!--<button ng-disabled="" ng-click="create(entity)" class="btn btn-primary btn-large" ng-if="!entity.id">创建</button>-->
+    <button ng-disabled="" ng-click="saveCorrespond(selection,entity)" class="btn btn-primary btn-large">保存</button>
+    <button ng-click="cancelEdit()" class="btn btn-large">取消</button>
+  </div>
+</div>
+
+
